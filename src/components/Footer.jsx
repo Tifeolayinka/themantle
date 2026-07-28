@@ -1,4 +1,9 @@
-const FOOTER_LINKS = ["About The Mantle", "Programme", "Ministers", "Register"];
+const FOOTER_LINKS = [
+  { label: "About The Mantle", href: "#about" },
+  { label: "Programme", href: "#programme" },
+  { label: "Ministers", href: "#ministers" },
+  { label: "Register", href: "#invitation" },
+];
 
 export default function Footer() {
   return (
@@ -19,10 +24,10 @@ export default function Footer() {
             <p className="m-0 font-sans text-[11px] font-semibold uppercase tracking-[1.5px] text-neutral-500 md:text-[12px]">
               Quick Links
             </p>
-            {FOOTER_LINKS.map((label) => (
+            {FOOTER_LINKS.map(({ label, href }) => (
               <a
                 key={label}
-                href="#"
+                href={href}
                 className="font-sans text-[13px] text-neutral-300 hover:text-white md:text-[14px]"
               >
                 {label}
