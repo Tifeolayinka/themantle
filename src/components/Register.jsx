@@ -8,13 +8,6 @@ const ATTENDANCE_OPTIONS = [
   "Online / Streaming",
 ];
 
-const QUESTION_TYPES = [
-  "General",
-  "Accommodation",
-  "Group Registration",
-  "Other",
-];
-
 const inputClasses =
   "w-full rounded-lg border border-white/20 bg-white/10 px-4 py-3 font-sans text-[15px] text-white placeholder-white/40 outline-none transition-colors focus:border-ember focus:ring-2 focus:ring-ember/40 md:text-[16px]";
 
@@ -147,44 +140,6 @@ export default function Register() {
             ))}
           </div>
         </fieldset>
-
-        <div className="flex flex-col gap-1.5">
-          <label htmlFor="register-seats" className={labelClasses}>
-            Seats to Reserve
-          </label>
-          <input
-            id="register-seats"
-            name="entry.SEATS_ID"
-            type="number"
-            min="1"
-            step="1"
-            defaultValue="1"
-            required
-            className={inputClasses}
-          />
-        </div>
-
-        <div className="flex flex-col gap-1.5">
-          <label htmlFor="register-question-type" className={labelClasses}>
-            Question Type
-          </label>
-          <select
-            id="register-question-type"
-            name="entry.QUESTION_ID"
-            required
-            defaultValue=""
-            className={`${inputClasses} text-white [color-scheme:dark]`}
-          >
-            <option value="" disabled>
-              Select an option
-            </option>
-            {QUESTION_TYPES.map((type) => (
-              <option key={type} value={type}>
-                {type}
-              </option>
-            ))}
-          </select>
-        </div>
 
         <button
           type="submit"
